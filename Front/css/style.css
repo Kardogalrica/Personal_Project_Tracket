@@ -1,0 +1,297 @@
+:root {
+    --primary-color:#1258B5;
+    --white:#fff;
+    --secondary-color:#E0EBF6;
+}
+
+* {
+    transition: all 0.3s linear;
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+.color-primary {
+    color: var(--primary-color);
+}
+
+.bg-secondary-color {
+    background-color: var(--secondary-color);
+}
+
+.bg-traspararente {
+    background-color: transparent;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.menu-meus-projectos.accordion-button:not(.collapsed) {
+    background-color: transparent;
+}
+
+.mx-feedback {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.separated {
+    height: 1px;
+    background-color: #DCDCDC;
+}
+
+
+.projeto-tabs.nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    position: relative;
+}
+
+.projeto-tabs.nav-link.active::after {
+    position: absolute;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  
+    border-top: 20px solid var(--primary-color);
+    transform: translate(-50%, -50%);
+    top: 58px;
+
+}
+
+.projeto-tabs.nav-link {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.f-38 {
+    font-size: 38px;
+}
+
+.f-18 {
+    font-size: 18px;
+}
+
+.icon-circulo {
+    width: 37px;
+    height: 37px;
+}
+
+/* Login */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Body Styles */
+body.login {
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+}
+
+/* Container */
+.login .container.container-form {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background: #fff;
+    margin: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.login .container h1 {
+    font-size: 36px;
+}
+
+.login .container p {
+    font-size: 14.5px;
+    margin: 15px 0;
+}
+
+.login form {
+    width: 100%;
+}
+
+.login .form-box {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+    transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.login .container.active .form-box {
+    right: 50%;
+}
+
+.login .form-box.register {
+    visibility: hidden;
+}
+
+.login .container.active .form-box.register {
+    visibility: visible;
+}
+
+.login .input-box {
+    margin: 30px 0;
+}
+
+.login .input-box input {
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: #eee;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.login .input-box input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.login .input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login .forgot-link {
+    margin: -15px 0 15px;
+}
+
+.login .forgot-link a {
+    font-size: 14.5px;
+    color: #333;
+}
+
+.login .btn {
+    width: 100%;
+    height: 48px; 
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: 600; 
+}
+
+.login .toggle-panel .btn {
+    background: #7494ec;
+    color: #fff;
+}
+
+.login .toggle-panel .btn:hover {
+    color: #7494ec;
+    background-color: #fff;
+}
+
+.login .form-box .btn {
+    color: #7494ec;
+    border: 1px solid #7494ec;
+}
+
+.login .form-box .btn:hover {
+    background: #7494ec;
+    color: #fff;
+}
+
+
+.login .social-icons a {
+    display: inline-flex;
+    padding: 10px;
+    border: 2px solid #ccc;
+    font-size: 24px;
+    color: #333;
+    margin: 0 8px;
+}
+
+.login .toggle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login .toggle-box::before {
+    content: '';
+    position: absolute;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    background-color: #7494ec;
+    border-radius: 150px;
+    z-index: 2;
+    transition: 1.8s ease-in-out;
+}
+
+.login .container.active .toggle-box::before {
+    left: 50%;
+}
+
+.login .toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    flex-direction: column;
+    z-index: 2;
+    transition: 0.6s ease-in-out;
+}
+
+.login .toggle-panel.toggle-left {
+    left: 0;
+    transition-delay: 1.2s;
+}
+
+.login .container.active .toggle-panel.toggle-left {
+    left: -50%;
+    transition-delay: 0.6s;
+}
+
+.login .toggle-panel.toggle-right {
+    right: -50%;
+    transition-delay: 0.6s;
+}
+
+.login .container.active .toggle-panel.toggle-right {
+    right: 0;
+    transition-delay: 1.2s;
+}
+
+.login .toggle-panel p {
+    margin-bottom: 20px;
+}
+
+.login .toggle-panel .btn {
+    width: 160px;
+    height: 46px;
+    background: transparent;
+    border: 2px solid #fff;
+    box-shadow: none;
+}
+
+.login .fs-12 {
+    font-size: 12px;
+}
+

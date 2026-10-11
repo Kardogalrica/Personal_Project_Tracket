@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css bootatrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <!-- js Boostrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      <!-- icon Bootstrap -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+       <!-- css -->
+        <link rel="stylesheet" href="css/style.css">
+       <!-- js -->
+        <script type="module" src="js/PersonalProject.js"></script>
+</head>
+<body class="">
+
+    <!-- Feedback Menssague -->
+     <div class="fixed-top w-auto mx-feedback mt-5">
+        <!-- Sucess -->
+        <div class="alert alert-success alert-dismissible d-flex gap-3 d-none shadow" id="feedback-menssague-sucess" role="alert">
+            <span><i class="bi bi-check-circle-fill"></i></span>
+            <div>Nice, you triggered this alert message!</div>
+        </div>
+     </div>
+
+    <div class="container-fluid vh-100 vw-100">
+        <!-- NavBar -->
+        <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <div class="d-flex gap-3">
+                    <!-- Title -->
+                    <a class="px-5 navbar-brand text-white" href="#"><h3>Gestão de Projetos</h3></a>   
+                </div>
+        </nav>
+        <div class="container-fluid py-0">
+            <div class="row">
+                <div class="col-lg-2 col-12 bg-secondary-color h-auto">
+                    <!-- Buttom Novo Projeto -->
+                    <div class="text-center py-3">
+                        <button type="button" class="btn btn-primary w-75 shadow" data-bs-toggle="modal" data-bs-target="#criar_Projecto"><h5>+ Novo Projeto</h5></button>                        
+                    </div>
+                    <!-- Acordion Meus Projetos -->
+                    <div class="accordion w-100" id="accordion-meus-Projectos">
+                        <div class="accordion-item border-0 bg-traspararente">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button menu-meus-projectos bg-traspararente" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h5>Meus Projetos</h5>
+                            </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show w-100" data-bs-parent="#accordion-meus-Projectos">
+                                <div class="accordion-body">
+                                    <div class="list-group" id="listaProjectos">
+                                        <a href="#" class="list-group-item list-group-item-action bg-traspararente border-0 active">Website Personal</a>
+                                        <a href="#" class="list-group-item list-group-item-action bg-traspararente border-0">App Mobile</a>
+                                        <a href="#" class="list-group-item list-group-item-action bg-traspararente border-0">Sistema de Inventário</a>
+                                        <a href="#" class="list-group-item list-group-item-action bg-traspararente border-0">Campanha de Marketing</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Body -->
+                <div id="NoSelecion-Project"class="col-lg-10 col-12 p-4">
+                    <div class="alert alert-primary" role="alert">
+                        Por favor crie ou selecione um Projecto
+                    </div>
+                </div>
+                <div id="Selecion-Project" class="col-lg-10 col-12 p-4 d-none">
+                    <!-- Titulo Projeto -->
+                     <div class="mt-4 row">
+                        <h2 class="mb-4" id="NomeProjeto">Website Pessoal</h2>
+                        <div class="separated"></div>                        
+                     </div>
+                     <!-- Descrição do Projeto -->
+                    <div class="mt-4 row">
+                        <div class="mb-4" id="descricaoProjeto"></div>
+                        <div class="separated"></div>                        
+                     </div>
+                     <!-- Caracteristicas Projeto -->
+                     <div class="row g-4 mt-2">
+                        <div class="col-lg-4 col-12">
+                            <strong class="h4 me-3">Estado:</strong>
+                            <span id="LabelEstado" class="f-18"></span>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <strong class="h4">Criado em:</strong>
+                            <span id="Dt_CriadoEm" class="f-18"></span>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <strong class="h4">Aberto em:</strong>
+                            <span id="Dt_AbertoEm" class="f-18"></span>
+                        </div>
+                        <div class="separated"></div>
+                     </div>
+                     <!-- Action Projeto -->
+                    <div class="mt-4 row">
+                        <div class="d-flex gap-5 mb-4">
+                            <button id="Abrir" class="btn btn-outline-primary shadow">Abrir Projeto</button>
+                            <button id="Concluir" class="btn  btn-outline-success shadow">Concluir Projeto</button>
+                            <button id="Cancelar" class="btn btn-outline-danger shadow">Cancelar Projeto</button>
+                            <button id="Apagar" class="btn btn-danger shadow">Apagar Projeto</button>
+                        </div>
+                        <div class="separated"></div>                        
+                    </div>
+                    <!-- + Detalhes -->
+                     <div class="mt-4 row">
+                        <div class="mb-4 justify-content-space-betwwen d-flex gap-4">
+                            <div class="border p-3 rounded-3 d-flex gap-3 flex-wrap bg-secondary-color shadow w-100">
+                                <i class="bi bi-bookmark-fill f-38 color-primary"></i>
+                                <div>
+                                    <h4 class="color-primary">Total Tarefas:</h4>
+                                    <div id ="t-tarefas" class="color-primary h5">5</div>
+                                </div>
+                            </div>
+                            <div class="border p-3 rounded-3 d-flex gap-3 flex-wrap bg-secondary-color shadow w-100">
+                                <i class="bi bi-clock-fill f-38 color-primary"></i>
+                                <div class="color-primary">
+                                    <h4 class="color-primary">Tota Horas Estimadas:</h4>
+                                    <div id="t-estitimadas" class="color-primary h5">6.5h</div>
+                                </div>
+                            </div>
+                            <div class="border p-3 rounded-3 d-flex gap-3 flex-wrap bg-secondary-color shadow w-100">
+                                <i class="bi bi-clock-fill f-38 color-primary"></i>
+                                <div>
+                                    <h4 class="color-primary">Horas Registadas:</h4>
+                                    <div id="t-trabalhadas" class="color-primary h5">6.5h</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separated"></div>
+                     </div>
+                     <!-- Tarefas e Tempos do Pedido -->
+                     <div class="row">
+                        <div class="col-12 g-4">
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="projeto-tabs nav-link active border" id="tarefas-tab" data-bs-toggle="tab" data-bs-target="#Tab-Tarefas" type="button" role="tab" aria-controls="Tab-Tarefas" aria-selected="true">
+                                        <h5>Tarefas</h5>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="projeto-tabs nav-link border" id="tab-Tempo" data-bs-toggle="tab" data-bs-target="#tab-Tempo-pane" type="button" role="tab" aria-controls="tab-Tempo-pane" aria-selected="false">
+                                        <h5>Registo de Tempos</h5>
+                                    </button>
+                                </li>
+                            </ul>
+                            <!-- Tab Tarefas -->
+                            <div class="tab-content mt-4" id="myTabContent">
+                                <div class="tab-pane fade show active" id="Tab-Tarefas" role="tabpanel" aria-labelledby="tarefas-tab" tabindex="0">
+                                    <div class="border w-100 h-100 p-3 rounded-4 shadow">
+                                        <div>
+                                            <div class="d-flex">
+                                                <button id="Tarefas" type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#criar_Tarefas"><h5>+ Adicionar Tarefa</h5></button>                                                
+                                            </div>
+                                            <div class="separated my-4"></div>
+                                            <ul id="listaTarefas" class="list-group">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab Tempo -->
+                                <div class="tab-pane fade" id="tab-Tempo-pane" role="tabpanel" aria-labelledby="tab-Tempo" tabindex="0">
+                                    <div class="border w-100 h-100 p-3 rounded-4 shadow">
+                                        <div>
+                                            <div class="d-flex">
+                                                <button id="Tempos" type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#criar_Tempo"><h5>+ Adicionar Tempo</h5></button>                                                
+                                            </div>
+                                            <div class="separated my-4"></div>
+                                            <ul id="listaTempo" class="list-group">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modais -->
+<!-- Criar Projecto -->
+<div class="modal fade" id="criar_Projecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="criar_ProjectoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="criar_ProjectoLabel">Criar Novo Projeto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form calss="needs-validation">
+            <div class="mb-3">
+                <label for="nome-Projeto" class="form-label">Nome do Projeto*</label>
+                <input type="text" name="nome" id="nome-Projeto" class="form-control">
+                <div id="invalid-menssague-nomeProjeto" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+            <div class="mb-3">
+                <label for="descricao-Projeto" class="form-label">Descrição do Projeto*</label>
+                <textarea id="descricao-Projeto" class="form-control"></textarea>
+                <div id="invalid-menssague-descricaoProjeto" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button id="criarProjeto" type="button" class="btn btn-primary">Criar</button>
+        <button id="CriarTarefasAuto" type="button" class="btn btn-primary">Criar Tarefas Automaticamente</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Criar Tarefas -->
+<div class="modal fade" id="criar_Tarefas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="criar_TarefasLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="criar_TarefasLabel">Criar Nova Tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form calss="needs-validation">
+            <div class="mb-3">
+                <label for="nome-Tarefa" class="form-label">Nome da Tarefa*</label>
+                <input type="text" name="nome" id="nome-Tarefa" class="form-control">
+                <div id="invalid-menssague-nomeTarefa" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+            <div class="mb-3">
+                <label for="Estimativa" class="form-label">Estimativa*</label>
+                <input type="number" name="Estimativa" id="Estimativa-Tarefa" class="form-control">
+                <div id="invalid-menssague-EstimativaTarefa" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button id="criarTarefa" type="button" class="btn btn-primary">Criar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Criar Tempo -->
+<div class="modal fade" id="criar_Tempo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="criar_TempoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="criar_TempoLabel">Criar Novo Tempo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form calss="needs-validation">
+            <div class="mb-3">
+                <label for="nome-data" class="form-label">Data*</label>
+                <input type="date" name="nome" id="data-tempo" class="form-control">
+                <div id="invalid-menssague-data-tempo" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+            <div class="mb-3">
+                <label for="Horas" class="form-label">Horas*</label>
+                <input type="number" name="Horas" id="Horas" class="form-control">
+                <div id="invalid-menssague-Horas" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+            <div class="mb-3">
+                <label for="notas" class="form-label">Notas*</label>
+                <textarea name="notas" id="notas" class="form-control"></textarea>
+                <div id="invalid-menssague-notas" class="invalid-feedback">Campo Obrigatório</div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button id="criarTempo" type="button" class="btn btn-primary">Criar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

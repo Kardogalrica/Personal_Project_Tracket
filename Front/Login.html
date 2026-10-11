@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/Login.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="d-flex justify-content-center align-items-center login">
+    <div class="container container-form">
+        <!-- Login Form -->
+         <div class="form-box d-flex align-items-center login">
+            <form>
+                <h1>Login</h1>
+                <div class="input-box">
+                    <div class="position-relative">
+                        <input id="email-login" type="email" id="" placeholder="Email" required>
+                        <i class="bi bi-envelope-fill"></i>                        
+                    </div>
+                    <div id="m-email-login" class="text-start text-danger fs-12 d-none"></div> 
+                </div>
+                <div class="input-box">
+                    <div class="position-relative">
+                        <input id="pass-login" type="password" id="" placeholder="Password" required>
+                        <i class="bi bi-lock-fill"></i>                        
+                    </div>
+                    <div id="m-pass-login" class="text-start text-danger fs-12 d-none"></div> 
+                </div>
+                <button id="btn-login" class="btn">Login</button>
+            </form>
+         </div>
+
+         <!-- Register Form -->
+          <div class="form-box d-flex align-items-center register">
+            <form>
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <div class="position-relative">
+                        <input id="username-register" type="text" id="" placeholder="Username" required>
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div id="m-username-register" class="text-start text-danger fs-12 d-none"></div>
+                </div>
+                <div class="input-box">
+                    <div class="position-relative">
+                        <input id="email-register" type="email" id="" placeholder="Email" required>
+                        <i class="bi bi-envelope-fill"></i>                        
+                    </div>
+                    <div id="m-email-register" class="text-start text-danger fs-12 d-none"></div>
+                </div>
+                <div class="input-box">
+                    <div class="position-relative">
+                        <input id="pass-register" type="password" id="" placeholder="Password" required>
+                        <i class="bi bi-lock-fill"></i>               
+                    </div>
+                    <div id="m-pass-register" class="text-start text-danger fs-12 d-none"></div> 
+                </div>
+                <button id="btn-register" class="btn">Register</button>
+            </form>
+          </div>
+          
+          <!-- Toggle Box -->
+           <div class="toggle-box">
+
+                <!-- Toggle Box Left -->
+                <div class="toggle-panel d-flex justify-content-center align-items-center toggle-left">
+                    <h1>Hello, welcome!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="btn register-btn">Register</button>
+                </div>
+
+                <!-- Toggle Box Right -->
+                <div class="toggle-panel d-flex justify-content-center align-items-center toggle-right">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="btn login-btn">Login</button>
+                </div>
+
+           </div>
+    </div>
+</body>
+</html>
